@@ -49,3 +49,7 @@ View(my_dataset)
 #Performing logistic regression model
 logistic <- glm(X3P ~ height, data = my_dataset, family = "binomial")
 summary(logistic)
+
+logistic <- glm(X3P ~ height + weight + MP + G + X2P + FT + PTS,
+                data = my_dataset, family = "binomial")
+summary(logistic)
