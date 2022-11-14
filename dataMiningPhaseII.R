@@ -8,6 +8,9 @@ library("ISLR")
 
 #Exploring the data set
 dim(dataset)
+names(dataset)
+summary(dataset)
+head(dataset)
 str(dataset)
 glimpse(dataset)
 head(dataset)
@@ -23,3 +26,10 @@ my_dataset <- dataset %>%
   mutate(height = height / 100, X3P = X3P * 100)
 
 View(my_dataset)
+
+#Changing the X3P column into a qualitative column
+my_dataset$X3P <- ifelse(test = my_dataset$X3P >= 2, yes = "Good", no = "Bad")
+
+View(my_dataset)
+
+#Performing logistic regression model
